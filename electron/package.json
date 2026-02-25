@@ -8,7 +8,7 @@
 
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder"
+    "build": "electron-builder --win nsis"
   },
 
   "devDependencies": {
@@ -26,21 +26,44 @@
 
     "files": [
       "**/*",
-      "!dist/*",
-      "!node_modules/.cache"
+      "!dist/**",
+      "!node_modules/.cache/**",
+      "!*.log"
     ],
 
+    "extraResources": [
+      {
+        "from": "gestures",
+        "to": "gestures"
+      },
+      {
+        "from": "assets",
+        "to": "assets"
+      },
+      {
+        "from": "app.py",
+        "to": "app.py"
+      }
+    ],
+
+    "asar": false,
+
     "win": {
-      "target": "nsis",
-      "icon": "assets/icons/icon.ico",
-      "sign": false
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.ico"
     },
 
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
+      "createStartMenuShortcut": true,
+      "shortcutName": "UGesture"
     }
   }
 }

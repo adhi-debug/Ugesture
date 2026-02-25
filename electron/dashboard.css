@@ -1,9 +1,9 @@
 /* ---------- FONTS ---------- */
 
-@font-face{font-family:Floe;src:url("../assets/fonts/Floe.otf");}
-@font-face{font-family:Moderniz;src:url("../assets/fonts/Moderniz.otf");}
-@font-face{font-family:Etude;src:url("../assets/fonts/Etude Noire Regular.ttf");}
-@font-face{font-family:Kota;src:url("../assets/fonts/KotaSansDemo-Italic.ttf");}
+@font-face{font-family:Floe;src:url("assets/fonts/Floe.otf");}
+@font-face{font-family:Moderniz;src:url("assets/fonts/Moderniz.otf");}
+@font-face{font-family:Etude;src:url("assets/fonts/Etude Noire Regular.ttf");}
+@font-face{font-family:Kota;src:url("assets/fonts/KotaSansDemo-Italic.ttf");}
 
 
 /* ---------- BASE ---------- */
