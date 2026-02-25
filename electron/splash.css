@@ -1,0 +1,43 @@
+@font-face{font-family:Floe;src:url("../assets/fonts/Floe.otf");}
+@font-face{font-family:Moderniz;src:url("../assets/fonts/Moderniz.otf");}
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:#07090f;
+font-family:Moderniz;
+color:white;
+}
+
+.logo{
+width:220px;
+filter:drop-shadow(0 0 60px cyan);
+animation:pulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes pulse{
+from{transform:scale(1)}
+to{transform:scale(1.08)}
+}
+
+.bar{
+width:320px;
+height:6px;
+background:#1b1f2b;
+border-radius:12px;
+margin-top:40px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+width:0;
+background:linear-gradient(90deg,cyan,magenta);
+animation:load 2.3s forwards;
+}
+
+@keyframes load{to{width:100%}}

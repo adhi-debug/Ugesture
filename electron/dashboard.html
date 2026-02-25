@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>UGESTURE</h1>
+
+<div id="status" class="status">🟢 Ready for gestures</div>
+
+<div class="grid">
+
+<div class="card" data-action="play"><img src="../assets/icons/play.png"><div>Play/Pause</div></div>
+<div class="card" data-action="forward"><img src="../assets/icons/forward.png"><div>Forward</div></div>
+<div class="card" data-action="backward"><img src="../assets/icons/backward.png"><div>Backward</div></div>
+<div class="card" data-action="mute"><img src="../assets/icons/mute.png"><div>Volume Down</div></div>
+<div class="card" data-action="unmute"><img src="../assets/icons/unmute.png"><div>Volume Up</div></div>
+<div class="card" data-action="slow"><img src="../assets/icons/slow.png"><div>Slow</div></div>
+<div class="card" data-action="speedup"><img src="../assets/icons/speedup.png"><div>Speed Up</div></div>
+
+</div>
+
+<div class="controls">
+
+<button id="cameraBtn" class="mainbtn">Start Camera</button>
+<button class="mainbtn secondary" onclick="window.api.openYT()">Open YouTube</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* ---------- CAMERA TOGGLE ---------- */
+
+let running=false;
+const camBtn=document.getElementById("cameraBtn");
+
+camBtn.onclick=()=>{
+ if(!running){
+   window.api.startCamera();
+   camBtn.innerText="Stop Camera";
+   document.getElementById("status").innerText="🎥 Camera starting...";
+   running=true;
+ }else{
+   window.api.stopCamera();
+   camBtn.innerText="Start Camera";
+   document.getElementById("status").innerText="⛔ Camera stopped";
+   running=false;
+ }
+};
+
+
+/* ---------- REALTIME STATUS + CARD FLASH ---------- */
+
+window.addEventListener("gesture",(e)=>{
+ const msg=e.detail;
+ document.getElementById("status").innerText="🤖 "+msg;
+
+ document.querySelectorAll(".card").forEach(c=>{
+   if(msg.toLowerCase().includes(c.dataset.action)){
+     c.classList.add("active");
+     setTimeout(()=>c.classList.remove("active"),600);
+   }
+ });
+});
+
+
+/* ---------- CURSOR SPOTLIGHT (FIXED) ---------- */
+
+document.addEventListener("mousemove",(e)=>{
+ document.body.style.setProperty("--x", e.clientX + "px");
+ document.body.style.setProperty("--y", e.clientY + "px");
+});
+
+</script>
+
+</body>
+</html>

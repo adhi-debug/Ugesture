@@ -1,0 +1,16 @@
+{
+  "name": "ugesture",
+  "version": "1.0.0",
+  "description": "**Ugesture** is a Python-based desktop application that allows users to control media playback and other functions using hand gestures. The project uses computer vision and PyQt5 to provide a modern, stylish dashboard interface with interactive gesture control features.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "electron": "^40.6.1"
+  }
+}

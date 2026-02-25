@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="intro.css">
+</head>
+
+<body>
+
+<video id="introVid" autoplay muted playsinline>
+  <source src="../assets/intro.mp4" type="video/mp4">
+</video>
+
+<script>
+
+const vid = document.getElementById("introVid");
+
+vid.addEventListener("loadedmetadata", ()=>{
+    const duration = vid.duration;
+
+    if(!isNaN(duration) && duration > 0){
+        setTimeout(()=>window.api.navigate("splash.html"), duration * 1000);
+    } else {
+        setTimeout(()=>window.api.navigate("splash.html"), 7000);
+    }
+});
+
+vid.addEventListener("ended", ()=>{
+    window.api.navigate("splash.html");
+});
+
+</script>
+
+</body>
+</html>
