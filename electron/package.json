@@ -1,16 +1,15 @@
 {
   "name": "ugesture-ui",
   "version": "1.0.0",
-  "description": "UGesture - Hand Gesture Control Desktop App",
+  "description": "Gesture Controlled YouTube Desktop App",
   "main": "main.js",
+  "author": "V Adhithyan",
+  "license": "MIT",
 
   "scripts": {
     "start": "electron .",
     "build": "electron-builder"
   },
-
-  "author": "V Adhithyan",
-  "license": "MIT",
 
   "devDependencies": {
     "electron": "^30.0.0",
@@ -26,18 +25,21 @@
     },
 
     "files": [
-      "**/*"
+      "**/*",
+      "!dist/*",
+      "!node_modules/.cache"
     ],
 
     "win": {
       "target": "nsis",
-      "icon": "assets/icon.ico"
+      "icon": "assets/icons/icon.ico"
     },
 
     "nsis": {
       "oneClick": false,
-      "perMachine": false,
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
     }
   }
 }
