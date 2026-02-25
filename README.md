@@ -1,182 +1,228 @@
-# ✋ UGesture — Gesture Controlled YouTube Player
+# ✋ UGesture  
+### 🎮 Gesture-Controlled YouTube Player — Desktop Application
 
-UGesture is a **desktop application** that lets you control YouTube using **hand gestures** via your webcam.
+<p align="center">
 
-Built with:
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![Electron](https://img.shields.io/badge/Electron-Desktop_App-2b2e3a?style=for-the-badge&logo=electron)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand_Tracking-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-* 🐍 Python (MediaPipe + OpenCV + Selenium)
-* ⚡ Electron (Desktop UI)
-* 🎨 Modern Glassmorphism UI
-
-You can **play, pause, seek, mute, and change playback speed** — all without touching the keyboard.
+</p>
 
 ---
 
-## 🚀 Features
+## 🚀 Overview
 
-✅ Hand gesture detection using MediaPipe
-✅ Control YouTube playback in Chrome
-✅ Electron desktop interface
-✅ Real-time gesture status indicator
-✅ Animated UI with glassmorphism design
-✅ Auto-start camera from app
-✅ Works with Chrome remote debugging
+**UGesture** is a modern **gesture-controlled desktop application** that allows users to control **YouTube playback using hand gestures** detected through a webcam.
+
+It combines:
+
+- 🐍 **Python** → Gesture engine (MediaPipe + OpenCV + Selenium)  
+- ⚡ **Electron** → Desktop UI and system integration  
+- 🎨 **Glassmorphism Gaming-Style UI** → Smooth modern interface  
+
+Users can:
+
+✔ Play / Pause videos  
+✔ Seek forward / backward  
+✔ Control volume  
+✔ Adjust playback speed  
+✔ Operate hands-free  
+
+---
+
+## 📸 Screenshots
+
+### 🖥 Interface
+<p align="center">
+<img src="assets/screenshots/interface.png" width="800">
+</p>
+
+### ✋ Camera Detection
+<p align="center">
+<img src="assets/screenshots/camera_detection.png" width="800">
+</p>
+
+### ✨ Spotlight & Hover Effects
+<p align="center">
+<img src="assets/screenshots/spot_and_hover.png" width="800">
+</p>
 
 ---
 
 ## 🖐 Supported Gestures
 
-| Gesture           | Action                |
-| ----------------- | --------------------- |
-| Pinch fingers     | Play / Pause          |
-| Wave Right        | Forward 5s            |
-| Wave Left         | Backward 5s           |
-| Two fingers up    | Mute                  |
-| One finger up     | Unmute                |
-| Move hand up/down | Change playback speed |
+| Gesture | Action |
+|--------|--------|
+| 🤏 Pinch fingers | Play / Pause |
+| 👉 Wave Right | Forward 5 seconds |
+| 👈 Wave Left | Backward 5 seconds |
+| ✌ Two fingers up | Volume Up / Mute toggle |
+| ☝ One finger up | Volume Down / Unmute toggle |
+| 🖐 Hand movement | Playback speed control |
 
 ---
 
-## 🏗 Project Structure
+## ✨ Features
 
-```
+- 🧠 Real-time **hand detection** using MediaPipe  
+- 🎮 Fully **hands-free YouTube control**  
+- ⚡ Smooth **Electron desktop app**  
+- 🎨 Glassmorphism **gaming-style UI**  
+- 💡 Cursor spotlight + hover animations  
+- 📡 Real-time gesture status feedback  
+- 🎥 Auto camera start from app  
+- 🌐 Chrome debugging integration  
+
+---
+
+## 🏗 Architecture
+
+Electron UI → Preload Bridge → Python Gesture Engine → Selenium Chrome Control
+
+---
+
+## 📂 Project Structure
+
 ugesture/
 │
-├── gestures/              # Python gesture engine
-│   ├── controller.py
-│   ├── detector.py
-│   ├── recognizer.py
-│   ├── actions.py
-│   └── utils.py
+├── gestures/ # Python gesture engine
+│ ├── controller.py
+│ ├── detector.py
+│ ├── recognizer.py
+│ ├── actions.py
+│ └── utils.py
 │
-├── electron/              # Electron desktop app
-│   ├── main.js
-│   ├── preload.js
-│   ├── intro.html
-│   ├── splash.html
-│   ├── dashboard.html
-│   └── dashboard.css
+├── electron/ # Electron desktop UI
+│ ├── main.js
+│ ├── preload.js
+│ ├── intro.html
+│ ├── splash.html
+│ ├── dashboard.html
+│ └── dashboard.css
 │
-├── assets/                # Icons, fonts, video, chromedriver
+├── assets/
+│ ├── icons/
+│ ├── fonts/
+│ ├── screenshots/
+│ │ ├── interface.png
+│ │ ├── camera_detection.png
+│ │ └── spot_and_hover.png
+│ └── intro.mp4
 │
-├── app.py                 # Python entry launcher
+├── app.py
 └── README.md
-```
 
 ---
 
 ## 🧰 Requirements
 
-### Install Python dependencies
+### 🐍 Python (Recommended **3.11**)
 
-Use **Python 3.11 recommended**
+Install dependencies:
 
-```
+```bash
 pip install mediapipe opencv-python selenium numpy protobuf
-```
 
----
 
-### Install Electron dependencies
+### ⚡ Electron
 
-Inside `/electron` folder:
-
-```
+Inside /electron folder:
 npm install
-```
 
 ---
 
-## ▶️ How To Run
+### Running Constraints
 
-### 1️⃣ Start Chrome in debugging mode
+▶️ Running The App
+1️⃣ Start Chrome in Debug Mode
 
-Run:
-
-```
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\chrome-debug"
-```
-
-Then open YouTube in that Chrome.
+Open YouTube in that Chrome window.
 
 ---
 
-### 2️⃣ Start the desktop app
+2️⃣ Start Desktop App
 
-Inside `/electron`:
-
-```
+cd electron
 npm start
-```
+
+3️⃣ Use
+
+    Click Start Camera
+    Click Open YouTube
+    Control video using gestures
 
 ---
 
-### 3️⃣ Click inside app
+### 📦 Build Windows Installer
 
-* **Start Camera**
-* **Open YouTube**
+    cd electron
+    npm run build
 
-Control with gestures.
+Installer appears in:
 
----
+    electron/dist/
 
-## 📦 Build Windows Installer
+    ---
 
-Inside `/electron`:
+### 🛠 Troubleshooting
 
-```
-npm run build
-```
+    🎥 Camera not opening
 
-Installer will appear in:
+        Ensure webcam permissions enabled
+        Close apps using camera
+        Try different camera index in controller.py
 
-```
-electron/dist/
-```
+    🌐 Chrome not detected
 
----
+        Chrome must be launched with debugging port 9222
+        Ensure YouTube opened in that window
 
-## 🛠 Troubleshooting
+    🖐 Gesture lag
 
-### Camera not opening
-
-* Ensure webcam permission allowed
-* Close other apps using camera
-
-### Chrome not detected
-
-* Make sure Chrome launched with debugging port 9222
-
-### Gesture lag
-
-* Use good lighting
-* Keep hand inside camera frame
+        Use good lighting
+        Keep hand centered
+        Avoid cluttered backgrounds
 
 ---
 
-## 🌟 Future Improvements
+### 🔮 Future Improvements
 
-* Embed camera inside Electron UI
-* Multi-tab YouTube control
-* Custom gesture training
-* Dark/light themes
-* System tray integration
-
----
-
-## 👨‍💻 Author
-
-Built by **V . Chandanadhithyan**
-
-If you like this project ⭐ star the repo!
+    Embed camera feed inside Electron UI
+    Multi-tab YouTube control
+    Custom gesture training
+    Theme switching system
+    Background tray mode
+    Cross-platform installers
 
 ---
 
-## 📄 License
+### 👨‍💻 Author
 
-MIT License © 2026 **V Adhithyan**
+    V. Chandanadhithyan
+    GitHub: https://github.com/adhi-debug 
+    If you like this project:
+    ⭐ Star the repository
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files to deal in the Software
-without restriction, including without limitation the rights to use, copy,
-modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
+---
+
+### 📄 License
+
+    MIT License © 2026 V Adhithyan
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files to deal in the Software
+    without restriction, including without limitation the rights to use, copy,
+    modify, merge, publish, distribute, sublicense, and/or sell copies.
+
+---
+
+<p align="center"> <b>Built with Python + Electron + Passion 🚀</b> </p> ```
+
+
+
+
+
+
