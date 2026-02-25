@@ -87,31 +87,33 @@ Electron UI → Preload Bridge → Python Gesture Engine → Selenium Chrome Con
 
 ugesture/
 │
-├── gestures/ # Python gesture engine
-│ ├── controller.py
-│ ├── detector.py
-│ ├── recognizer.py
-│ ├── actions.py
-│ └── utils.py
+├── gestures/                 # Python gesture engine
+│   ├── controller.py
+│   ├── detector.py
+│   ├── recognizer.py
+│   ├── actions.py
+│   └── utils.py
 │
-├── electron/ # Electron desktop UI
-│ ├── main.js
-│ ├── preload.js
-│ ├── intro.html
-│ ├── splash.html
-│ ├── dashboard.html
-│ └── dashboard.css
+├── electron/                 # Electron desktop application
+│   ├── main.js
+│   ├── preload.js
+│   ├── intro.html
+│   ├── splash.html
+│   ├── dashboard.html
+│   └── dashboard.css
 │
-├── assets/
-│ ├── icons/
-│ ├── fonts/
-│ ├── screenshots/
-│ │ ├── interface.png
-│ │ ├── camera_detection.png
-│ │ └── spot_and_hover.png
-│ └── intro.mp4
+├── assets/                   # Icons, fonts, media & screenshots
+│   ├── icons/
+│   ├── fonts/
+│   ├── screenshots/
+│   │   ├── interface.png
+│   │   ├── camera_detection.png
+│   │   └── spot_and_hover.png
+│   └── intro.mp4
 │
-├── app.py
+├── app.py                    # Python launcher
+├── package.json              # Electron config
+├── package-lock.json
 └── README.md
 
 ---
