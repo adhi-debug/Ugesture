@@ -85,6 +85,7 @@ Electron UI → Preload Bridge → Python Gesture Engine → Selenium Chrome Con
 
 ## 📂 Project Structure
 
+```
 ugesture/
 │
 ├── gestures/                 # Python gesture engine
@@ -111,11 +112,11 @@ ugesture/
 │   │   └── spot_and_hover.png
 │   └── intro.mp4
 │
-├── app.py                    # Python launcher
-├── package.json              # Electron config
+├── app.py
+├── package.json
 ├── package-lock.json
 └── README.md
-
+```
 ---
 
 ## 🧰 Requirements
