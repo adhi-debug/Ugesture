@@ -32,7 +32,8 @@
 
     "win": {
       "target": "nsis",
-      "icon": "assets/icons/icon.ico"
+      "icon": "assets/icons/icon.ico",
+      "sign": false
     },
 
     "nsis": {
