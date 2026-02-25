@@ -124,6 +124,7 @@ Install dependencies:
 
 ```bash
 pip install mediapipe opencv-python selenium numpy protobuf
+```
 
 
 ### ⚡ Electron
